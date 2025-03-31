@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdemiroz <sdemiroz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 04:43:29 by nchairun          #+#    #+#             */
-/*   Updated: 2025/03/31 05:17:12 by nchairun         ###   ########.fr       */
+/*   Created: 2024/10/15 15:28:05 by sdemiroz          #+#    #+#             */
+/*   Updated: 2025/01/08 18:33:54 by sdemiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_shell
+t_list	*ft_lstnew(void *content)
 {
-    char    *envp;
-    int     exit_code;
-}				t_shell;
+	t_list	*new;
 
-#endif
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
+}

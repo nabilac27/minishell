@@ -6,19 +6,23 @@
 /*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 04:46:31 by nchairun          #+#    #+#             */
-/*   Updated: 2025/03/31 04:51:37 by nchairun         ###   ########.fr       */
+/*   Updated: 2025/03/31 05:26:08 by nchairun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minishell.h"
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
-    t_shell *minishell;
+	t_shell *minishell;
+	t_garbage_collector *gc_init_garbage_collector();
 
-    minishell = NULL;
-    (void)argc;
-    (void)argv;
-    (void)envp;
-    printf("%p\n", (void *)minishell);
+	(void)argc;
+	(void)argv;
+	(void)envp;
+
+	minishell = NULL;
+
+	gc_free_all();
+	// minishell = init_minishell(envp);
 }

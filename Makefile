@@ -6,13 +6,14 @@
 #    By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/31 04:29:14 by nchairun          #+#    #+#              #
-#    Updated: 2025/03/31 04:52:08 by nchairun         ###   ########.fr        #
+#    Updated: 2025/03/31 04:56:06 by nchairun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	minishell
 
 LIBFT_DIR	:= ./include/libft
+LIBFT_OBJS	:= $(shell find ./include/libft/build -iname "*.o")
 LIBFT 		:= $(LIBFT_DIR)/libft.a
 
 CC			:=	cc
@@ -40,5 +41,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	rm -f $(LIBFT)
-    
+	rm -f $(LIBFT_OBJS)
+
 re: fclean all

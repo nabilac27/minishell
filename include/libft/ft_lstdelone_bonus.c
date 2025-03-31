@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdemiroz <sdemiroz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 04:43:29 by nchairun          #+#    #+#             */
-/*   Updated: 2025/03/31 05:17:12 by nchairun         ###   ########.fr       */
+/*   Created: 2024/10/15 15:31:33 by sdemiroz          #+#    #+#             */
+/*   Updated: 2024/10/15 15:58:00 by sdemiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_shell
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    char    *envp;
-    int     exit_code;
-}				t_shell;
+	t_list	*x;
 
-#endif
+	if (!del || !lst)
+		return ;
+	x = lst;
+	lst = lst -> next;
+	(*del)(x -> content);
+	free (x);
+}

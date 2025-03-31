@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdemiroz <sdemiroz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 04:43:29 by nchairun          #+#    #+#             */
-/*   Updated: 2025/03/31 05:17:12 by nchairun         ###   ########.fr       */
+/*   Created: 2024/10/15 15:31:37 by sdemiroz          #+#    #+#             */
+/*   Updated: 2024/10/15 16:07:58 by sdemiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_shell
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    char    *envp;
-    int     exit_code;
-}				t_shell;
-
-#endif
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		(*f)(lst -> content);
+		lst = lst -> next;
+	}
+}

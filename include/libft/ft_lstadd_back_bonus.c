@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdemiroz <sdemiroz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 04:43:29 by nchairun          #+#    #+#             */
-/*   Updated: 2025/03/31 05:17:12 by nchairun         ###   ########.fr       */
+/*   Created: 2024/10/15 15:31:08 by sdemiroz          #+#    #+#             */
+/*   Updated: 2024/10/15 15:56:50 by sdemiroz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_shell
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    char    *envp;
-    int     exit_code;
-}				t_shell;
+	t_list	*temp;
 
-#endif
+	if ((*lst) == NULL)
+		(*lst) = new;
+	else
+	{
+		temp = ft_lstlast(*lst);
+		temp -> next = new;
+	}
+}
