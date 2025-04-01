@@ -6,22 +6,21 @@
 /*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 05:12:52 by nchairun          #+#    #+#             */
-/*   Updated: 2025/04/01 04:48:33 by nchairun         ###   ########.fr       */
+/*   Updated: 2025/04/01 07:03:04 by nchairun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minishell.h"
 
-char	**dup_env(char **envp);
-
 t_shell	*init_minishell(char **env)
 {
 	t_shell	*minishell;
 
-	minishell = malloc(sizeof(t_shell));
+	minishell = ft_malloc(sizeof(t_shell));
 	if (minishell == NULL)
 		exit(1);
 	minishell->env = dup_env(env);
+	minishell->builtin = init_builtin();
 	minishell->exit_code = 0;
 	return (minishell);
 }

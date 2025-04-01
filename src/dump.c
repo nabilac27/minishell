@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   dump.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 04:43:29 by nchairun          #+#    #+#             */
-/*   Updated: 2025/04/01 06:48:49 by nchairun         ###   ########.fr       */
+/*   Created: 2025/04/01 05:01:45 by nchairun          #+#    #+#             */
+/*   Updated: 2025/04/01 07:00:31 by nchairun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+// // print dup_env
+// int i = 0;
+// while ((minishell != NULL) && (minishell->env[i] != NULL))
+// {
+// 	printf("%s\n", minishell->env[i]);
+// 	i++;
+// }
 
-# include "libft/libft.h"
-# include <readline/history.h>
-# include <readline/readline.h>
-# include <stdbool.h>
-
-typedef struct s_shell
-{
-	char	**env;
-	char	**builtin;
-	int		exit_code;
-}			t_shell;
-
-// init_minishell.c
-t_shell		*init_minishell(char **env);
-char		**dup_env(char **envp);
-char		**init_builtin(void);
-
-#endif
+// int minishell_setup(t_shell *minishell, char *line)
+// {
+// checking redirection
+// minishell->path = get path
+// minishell->token = tokenization
+// ? set_heredoc_expanded
+// ? expanded all
+// checking correct redirection
+// parser
+// }
