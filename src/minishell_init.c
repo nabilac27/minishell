@@ -6,7 +6,7 @@
 /*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 05:12:52 by nchairun          #+#    #+#             */
-/*   Updated: 2025/04/01 07:03:04 by nchairun         ###   ########.fr       */
+/*   Updated: 2025/04/01 07:08:20 by nchairun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_shell	*init_minishell(char **env)
 	if (minishell == NULL)
 		exit(1);
 	minishell->env = dup_env(env);
-	minishell->builtin = init_builtin();
+	// minishell->builtin = dup_builtin();
 	minishell->exit_code = 0;
 	return (minishell);
 }
@@ -52,3 +52,28 @@ char	**dup_env(char **envp)
 	result[i] = NULL;
 	return (result);
 }
+
+// char	**dup_builtin(void)
+// {
+// 	char	**builtin;
+// 	int		i;
+
+// 	builtin = ft_malloc(8 * sizeof(char *));
+// 	if (builtin == NULL)
+// 		return (NULL);
+// 	builtin[0] = ft_strdup("echo");
+// 	builtin[1] = ft_strdup("cd");
+// 	builtin[2] = ft_strdup("pwd");
+// 	builtin[3] = ft_strdup("export");
+// 	builtin[4] = ft_strdup("unset");
+// 	builtin[5] = ft_strdup("env");
+// 	builtin[6] = ft_strdup("exit");
+// 	builtin[7] = NULL;
+// 	i = 0;
+// 	while (i < 7)
+// 	{
+// 		gc_add_begin(builtin[i]);
+// 		i++;
+// 	}
+// 	return (builtin);
+// }
