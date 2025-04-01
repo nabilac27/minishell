@@ -6,7 +6,7 @@
 /*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 04:43:29 by nchairun          #+#    #+#             */
-/*   Updated: 2025/03/31 05:17:12 by nchairun         ###   ########.fr       */
+/*   Updated: 2025/04/01 04:53:09 by nchairun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 typedef struct s_shell
 {
-    char    *envp;
-    int     exit_code;
-}				t_shell;
+	char	**env;
+	int		exit_code;
+}			t_shell;
+
+t_shell		*init_minishell(char **env);
 
 #endif

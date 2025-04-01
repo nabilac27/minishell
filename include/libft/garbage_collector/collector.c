@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   collector.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdemiroz <sdemiroz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nchairun <nchairun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 01:09:29 by sdemiroz          #+#    #+#             */
-/*   Updated: 2025/03/24 06:44:08 by sdemiroz         ###   ########.fr       */
+/*   Updated: 2025/04/01 04:53:01 by nchairun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	gc_free_all(void)
 {
-	ssize_t					len;
-	ssize_t					i;
+	ssize_t				len;
+	ssize_t				i;
 	t_gc_node			*temp;
 	t_gc_node			*current;
 	t_garbage_collector	*gc;
